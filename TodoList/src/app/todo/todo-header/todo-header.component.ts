@@ -20,13 +20,14 @@ export class TodoHeaderComponent {
   @Output() onEnterUp = new EventEmitter<boolean>();
 
   constructor(private elementRef: ElementRef) {
-    const event$ = Observable.fromEvent(elementRef.nativeElement, 'keyup')
-      .map(() => this.inputValue)
-      .debounceTime(this.delay)
-      .distinctUntilChanged();
-    event$.subscribe(input => this.textChanges.emit(input));
+    // const event$ = Observable.fromEvent(elementRef.nativeElement, 'keyup')
+    //   .map(() => this.inputValue)
+    //   .debounceTime(this.delay)
+    //   .distinctUntilChanged();
+    // event$.subscribe(input => this.textChanges.emit(input));
   }
   enterUp(){
+    this.textChanges.emit(this.inputValue);
     this.onEnterUp.emit(true);
     this.inputValue = '';
   }

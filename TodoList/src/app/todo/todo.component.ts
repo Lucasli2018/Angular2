@@ -1,8 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Todo } from './todo.model';
+import { Router, ActivatedRoute, Params } from "@angular/router";
 
 @Component({
-  selector: 'app-todo',
+  //selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
@@ -11,10 +12,19 @@ export class TodoComponent implements OnInit {
   desc:string='';
   todos:Todo[]=[];
 
-  constructor(@Inject('todoService') private service) { }
+  constructor(@Inject('todoService') private service,private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit() {
-    this.getTodos();
+    this.route.params.forEach((params:Params)=>{
+      let filter=params['filter'];
+      this.filterTodos(filter);
+    });
+    //this.getTodos();
+  }
+  
+  filterTodos(filter:string):void{
+    this.service.filterTodos(filter)
+    .then(todos=>this.todos=[...todos]);
   }
 
   getTodos(): void {
