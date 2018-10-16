@@ -11,6 +11,7 @@
         />
         <!-- <div *ngIf="usernameRef.errors?.required">this is required</div>
         <div *ngIf="usernameRef.errors?.minlength">should be at least 3 charactors</div> -->
+        <div *ngIf="auth?.hasError">{{auth.errMsg}}</div>
       <input type="password"
         name="password"
         [(ngModel)]="password"

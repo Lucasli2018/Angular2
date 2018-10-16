@@ -3,13 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { CoreModule } from './core/core.module';
+import { AppRoutingModule } from './app-routing.module';
+import { TodoModule } from './todo/todo.module';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { routing } from './app.routes';
-import { AuthService } from './core/auth.service';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryTodoDbService } from './todo/todo-data';
-import { TodoModule } from './todo/todo.module';
 
 @NgModule({
   declarations: [
@@ -20,15 +19,9 @@ import { TodoModule } from './todo/todo.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    //InMemoryWebApiModule.forRoot(InMemoryTodoDbService),
-    routing,
+    AppRoutingModule,
+    CoreModule,
     TodoModule
-  ],
-  providers: [
-    {
-      provide:'auth',
-      useClass:AuthService
-    }
   ],
   bootstrap: [AppComponent]
 })

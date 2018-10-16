@@ -1,0 +1,64 @@
+{
+  "todos": [
+    {
+      "id": "bf75769b-4810-64e9-d154-418ff2dbf55e",
+      "desc": "getting up",
+      "completed": false,
+      "userId": 1
+    },
+    {
+      "id": "5894a12f-dae1-5ab0-5761-1371ba4f703e",
+      "desc": "have breakfast",
+      "completed": true,
+      "userId": 2
+    },
+    {
+      "id": "0d2596c4-216b-df3d-1608-633899c5a549",
+      "desc": "go to school",
+      "completed": true,
+      "userId": 1
+    },
+    {
+      "userId": 1,
+      "id": "ce73907b-21df-f13e-cc9b-f4715cbdb274",
+      "desc": "goog",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": "9220be14-7af6-9228-a84f-37cb8259db3a",
+      "desc": "gogo",
+      "completed": true
+    },
+    {
+      "userId": 1,
+      "id": "a0deff16-e309-43fd-bbc1-cef12d5fb8a6",
+      "desc": "toto",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": "a209a72d-1153-9f73-ddf7-077b84d108d7",
+      "desc": "hello moto",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": "628bba3f-b8b7-0923-5c44-2e0ea93ad02c",
+      "desc": "hahahahahahaha",
+      "completed": false
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "id": 2,
+      "username": "lucas",
+      "password": "123"
+    }
+  ]
+}

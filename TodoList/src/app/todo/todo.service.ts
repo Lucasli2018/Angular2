@@ -10,12 +10,15 @@ import { Todo } from './todo.model';
 export class TodoService {
 
   //private api_url = 'api/todos';
+  userId:number;
   private api_url='http://localhost:3000/todos';
   private headers = new Headers({'Content-Type': 'application/json'});
   constructor(private http: Http) { }
   // POST /todos
   addTodo(desc:string): Promise<Todo> {
+    const userId:number=+localStorage.getItem('userId');
     let todo = {
+      userId:userId,
       id: UUID.UUID(),
       desc: desc,
       completed: false
@@ -49,14 +52,15 @@ export class TodoService {
   
   // GET /todos?completed=true/false
   filterTodos(filter: string): Promise<Todo[]> {
+    const userId:number=+localStorage.getItem('userId');
     switch(filter){
       case 'ACTIVE': return this.http
-                        .get(`${this.api_url}?completed=false`)
+                        .get(`${this.api_url}?completed=false&userId=${userId}`)
                         .toPromise()
                         .then(res => res.json() as Todo[])
                         .catch(this.handleError);
       case 'COMPLETED': return this.http
-                          .get(`${this.api_url}?completed=true`)
+                          .get(`${this.api_url}?completed=true&userId=${userId}`)
                           .toPromise()
                           .then(res => res.json() as Todo[])
                           .catch(this.handleError);
@@ -67,7 +71,8 @@ export class TodoService {
 
   // GET /todos
   getTodos(): Promise<Todo[]>{
-    return this.http.get(this.api_url)
+    const userId:number=+localStorage.getItem('userId');
+    return this.http.get(`${this.api_url}?userId=${userId}`)
               .toPromise()
               .then(res => res.json() as Todo[])
               .catch(this.handleError);

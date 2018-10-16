@@ -1,4 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
+import { Auth } from '../domain/entities';
 
 @Component({
   selector: 'app-login',
@@ -9,21 +12,26 @@ export class LoginComponent implements OnInit {
 
   username = '';
   password = '';
+  auth: Auth;
 
-  constructor(@Inject('auth') private service) {
-  }
+  constructor(@Inject('auth') private service, private router: Router) { }
 
   ngOnInit() {
   }
 
-  onSubmit(formValue) {
-    let result=this.service.loginWithCredentials(formValue.login.username, formValue.login.password);
-    console.log('auth result is: '+ result);
-    if(result){
-      window.location.href='todo';
-    }else{
-      alert('用户名或密码不正确');
-    }
+  onSubmit(formValue){
+    this.service
+      .loginWithCredentials(formValue.login.username, formValue.login.password)
+      .then(auth => {
+        let redirectUrl = (auth.redirectUrl === null)? '/todo': auth.redirectUrl;
+        if(!auth.hasError){
+          
+          this.router.navigate([redirectUrl]);
+          localStorage.removeItem('redirectUrl');
+        } else {
+          this.auth = Object.assign({}, auth);
+        }
+      });
   }
 
 }
