@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
       .then(auth => {
         let redirectUrl = (auth.redirectUrl === null)? '/todo': auth.redirectUrl;
         if(!auth.hasError){
-          
           this.router.navigate([redirectUrl]);
           localStorage.removeItem('redirectUrl');
         } else {

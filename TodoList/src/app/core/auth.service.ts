@@ -16,7 +16,7 @@ export class AuthService {
         let auth = new Auth();
         localStorage.removeItem('userId');
         let redirectUrl = (localStorage.getItem('redirectUrl') === null)?
-          '/': localStorage.getItem('redirectUrl');
+          '/todo': localStorage.getItem('redirectUrl');
         auth.redirectUrl = redirectUrl;
         if (null === user){
           auth.hasError = true;

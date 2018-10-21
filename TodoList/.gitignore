@@ -4,6 +4,9 @@
 /dist
 /tmp
 
+# data output
+/src/app/todo/todo-data.json
+
 # dependencies
 /node_modules
 

@@ -1,83 +1,70 @@
 {
   "todos": [
     {
-      "userId":1,
+      "userId": 1,
       "id": "f823b191-7799-438d-8d78-fcb1e468fc78",
       "desc": "blablabla",
       "completed": true
     },
     {
-      "userId":1,
+      "userId": 1,
       "id": "6f53f8e0-c690-ddc0-e06f-7a290548062d",
       "desc": "what",
       "completed": true
     },
     {
-      "userId":1,
-      "id": "ce975b5b-d690-b36b-8911-b75bb5d7e697",
-      "desc": "what do you want?",
-=======
-    },
-    {
+      "userId": 1,
       "id": "ce975b5b-d690-b36b-8911-b75bb5d7e697",
       "desc": "what do you want?",
       "completed": false
     },
     {
-      "id": "873b98ad-26ae-c14d-d53c-09ac400085cb",
-      "desc": "todo",
-      "completed": true
-    },
-    {
-      "id": "e44d6f6a-f8d0-25bc-8d21-9e56e7cac3b8",
-      "desc": "done",
-      "completed": true
-    },
-    {
-      "id": "d64af99f-3cb0-303e-060b-debb95999987",
-      "desc": "angular",
-      "completed": false
-    },
-    {
-      "id": "cc798912-5ba3-36a6-5406-479524cc9dea",
-      "desc": "java",
-      "completed": false
-    },
-    {
-      "id": "7d6fefd2-5d28-e0a1-0159-e3654be459bc",
-      "desc": "dotnet",
->>>>>>> 00dbaa3e99d68d77e7293027c936b6bc4f17e4c3
-      "completed": false
-    },
-    {
-      "userId":1,
+      "userId": 1,
       "id": "85fdab9c-33f3-b848-8318-d0cfa598edbc",
       "desc": "angular2",
       "completed": false
     },
     {
-      "userId":2,
+      "userId": 2,
       "id": "6ca946b6-ffd5-1583-447e-0100946eb7b4",
       "desc": "java",
       "completed": false
     },
     {
-      "userId":1,
+      "userId": 1,
       "id": "10837a1e-2629-8de6-8f04-e480e25f35f6",
       "desc": "dotnet",
       "completed": true
-    }
-  ],
-  "users":[
-    {
-        "id":1,
-        "username":"admin",
-        "password":"admin"
     },
     {
-        "id":2,
-        "username":"lucas",
-        "password":"admin"
+      "userId": 2,
+      "id": "dc0072cb-b656-4b25-41dc-c66c975d7a1b",
+      "desc": "hello world",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": "0916fabc-36c4-5cd9-1d3a-749bbca7df13",
+      "desc": "what do you want to do?",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": "2410e609-1793-0598-d0f7-42f9bdcf9909",
+      "desc": "这是一个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的待办事项",
+      "completed": true
     }
-]
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "id": 2,
+      "username": "lucas",
+      "password": "admin"
+    }
+  ]
 }
